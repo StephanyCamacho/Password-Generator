@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap');
+body{
+    background: url("../assets/images/dust_scratches.png");
+    color: #3b4954;
+}
+header{
+    text-align: center;
+}
+h1{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    font-family: 'Montserrat';
+    font-weight: 700;    
+}
+h2{
+    padding-top: 20px;
+    font-family: 'Montserrat';
+    font-weight: 300;    
+}
+.container{
+    margin-top:40px;
+    padding-bottom: 40px;
+    background: white;
+}
+.container-inside{
+    margin: 0 auto;
+    box-shadow: 0 0 30px #E0E0E0;
+}
+.col-md-10{
+    padding-bottom: 80px;
+}
+textarea{
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: 300; 
+}
+.Password{
+    background-color: #720026;
+    padding: 10px;
+    color: white;
+    outline: none;
+    border: none;
+    float: left;
+    margin-left: 40px;
+    font-family: 'Montserrat';
+    font-weight: 400;   
+}
+.Clipboard{
+    background-color: #c0c7cf;
+    padding: 10px;
+    color: white;
+    outline: none;
+    border: none;
+    float: right;
+    margin-right: 40px;
+    font-family: 'Montserrat';
+    font-weight: 400;   
+}
+.Password:hover{
+    background: #50001b;
+}
+.Clipboard:hover{
+    background: #9fa4a9;
+}

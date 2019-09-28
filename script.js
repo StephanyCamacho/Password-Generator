@@ -1,34 +1,26 @@
+//setting up variables for different choices for character passwords
 var upperEl = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var lowerEl = 'abcdefghijklmnopqrstuvwxyz';
 var numEl = '0123456789';
 var specialEl = '~!@#$%^&*()_+=';
 
-var passwordEl = document.getElementById("password");
-
+//creating an object to which we will save user choices
 var userChoices = {};
 
-var charLength = parseInt(prompt("How many characters?"));
+//prompting the user to spefific character length
+var charLength = parseInt(prompt("Please type in a number between 8 and 128."));
 
 // userChoice["charLength"] = charLength; 
-// while(charLength >! 128){
-//   prompt("Please choose a number between 8 and 128.");
-// }
-// while(charLength <! 8){
-//   prompt("Please choose a number between 8 and 128.");
-// }
+console.log(charLength)
 
 // get user input
-// var numChar = confirm("Would you like numbers?");
-// var lowerChar = confirm("Would you like lowercase characters?");
-// var upperChar = confirm("Would you like uppercase characters?");
-// var special = confirm("Would you like special characters?");
-
 function promptUser() {
   var numChar = confirm("Would you like numbers?");
   var lowerChar = confirm("Would you like lowercase characters?");
   var upperChar = confirm("Would you like uppercase characters?");
   var special = confirm("Would you like special characters?");
 
+// saving user's answer when prompted question
   if (numChar) {
     userChoices["numEl"] = numEl;
   }
@@ -54,21 +46,20 @@ function promptUser() {
   console.log(userChoices);
 }
 
+//calling the prompt function
 promptUser();
 
-function generatePassword() {
-    var result = '';
-    for (var i = 0; i < charLength; i++) {
-      result += upperEl.charAt(Math.floor(Math.random() * upperEl.length));
-    }
-    return result;
-};
+// function generatePassword() {
+//     var result = '';
+//     for (var i = 0; i < charLength; i++) {
+//       result += upperEl.charAt(Math.floor(Math.random() * upperEl.length));
+//     }
+//     return result;
+// };
 
-console.log(generatePassword(charLength));
-
+// console.log(generatePassword(charLength));
 
 /*
-
 
 */
 // '8' > 8
@@ -89,23 +80,35 @@ console.log(generatePassword(charLength));
   }
 */
 
+//where the magic happens
 function writePassword() {
   let finalPassword = '';
-  while (charLength > 0) { // as long as password length is still > 0 {
-    for (var key in userChoices) { // iterate over object
-      // get random character
-      let char = getRandomCharacter(userChoices[key]);
-      console.log('Random Character', char);
-      // concat to final password
-      finalPassword = finalPassword + char;
-      console.log(finalPassword, finalPassword.length);
-      charLength--;
-      console.log('>>>>>>>>>>>>>>>>', charLength)
-    }
+  for (var i = 0; i < charLength; i++) { // as long as password length is still greater than 0 {
+
+    let passwordEls = Object.keys(userChoices)
+    let randomEl = passwordEls[Math.floor(Math.random() * passwordEls.length)]
+    let char = getRandomCharacter(userChoices[randomEl]);
+
+    finalPassword += char;
+
+    console.log('RandomCharacter', char);
+    console.log(finalPassword, finalPassword.length);
+    console.log('>>>>>>>>>>>>>>>>', charLength)
+
+    // for (key in userChoices) { // iterate over object
+    //   // get random character
+    //   let char = getRandomCharacter(userChoices[key]);
+    //   console.log('RandomCharacter', char);
+    //   // concat to final password
+    //   finalPassword += char;
+    //   console.log(finalPassword, finalPassword.length);
+    //   charLength--;
+    //   console.log('>>>>>>>>>>>>>>>>', charLength)
+    // }
+
   }
   return finalPassword
 }
-
 
 function getRandomCharacter(str) {
   return str[Math.floor(Math.random() * str.length)]

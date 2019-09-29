@@ -4,6 +4,8 @@ var lowerEl = 'abcdefghijklmnopqrstuvwxyz';
 var numEl = '0123456789';
 var specialEl = '~!@#$%^&*()_+=';
 
+var button = document.getElementById("generate");
+
 //creating an object to which we will save user choices
 var userChoices = {};
 
@@ -106,7 +108,7 @@ function writePassword() {
     //   console.log('>>>>>>>>>>>>>>>>', charLength)
     // }
 
-  }
+  } 
   return finalPassword
 }
 
@@ -115,3 +117,9 @@ function getRandomCharacter(str) {
 }
 
 writePassword();
+
+//document.getElementById("password").value = writePassword();
+
+button.addEventListener("click", function(){
+  password.innerHTML = writePassword();
+})

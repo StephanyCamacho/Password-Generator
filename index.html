@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/style.css">
-    <script src="script.js"></script>
+    
     
   </head>
   <body>
@@ -17,7 +17,7 @@
             <div class="col-md-12">
               <header>
                 <h1>Password Generator</h1>
-              </header>
+              </header> 
             </div>
           </div>
           <div class="container-inside col-md-10 rounded">
@@ -26,10 +26,11 @@
               <div class="form-group">
                 <textarea class="form-control" readonly id="password" placeholder= "Your Secure Password" rows="7"></textarea>
                 <hr>
-                <button type="button" class="badge-pill btn btn-primary Password">Generate Password</button>
+                <button id="generate" type="button" class="badge-pill btn btn-primary Password">Generate Password</button>
                 <button type="button" class="badge-pill btn btn-primary Clipboard">Copy to Clipboard</button>
               </div>
           </div>
       </div>
   </body>
+  <script src="script.js"></script>
 </html>

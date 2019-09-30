@@ -123,3 +123,11 @@ writePassword();
 button.addEventListener("click", function(){
   password.innerHTML = writePassword();
 })
+
+const myInp = document.getElementById("password");
+const btnCopy = document.getElementById("copy");
+
+btnCopy.onclick = function(){
+  myInp.select();
+  document.execCommand("Copy");
+}
